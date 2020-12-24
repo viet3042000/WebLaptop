@@ -188,5 +188,7 @@ def update_checkout(request):
     data = json.loads(request.body)
     Id = data['Id']
     order = Order.objects.get(pk = Id)
-    order.delete()
+    order.show = False
+    order.save()
+    # order.delete()
     return JsonResponse("order is updated", safe=False)

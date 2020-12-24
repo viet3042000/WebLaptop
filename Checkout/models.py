@@ -22,6 +22,7 @@ class Order(models.Model):
     address = models.CharField(max_length=200, null=True)
     phone = models.CharField(max_length=200, null=True)
     description = models.TextField(null=True, blank=True)
+    show = models.BooleanField(default=True)
 
     def __str__(self):
         return str(self.id)
