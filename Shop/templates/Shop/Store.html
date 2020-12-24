@@ -1,0 +1,146 @@
+{% extends 'Shop/main.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li><a href="{% url 'home' %}">Trang chủ</a></li>
+                <li class="active"><a href="{% url 'store' %}">Cửa hàng</a></li>
+                <li><a href="{% url 'aboutUs' %}">Chúng tôi</a></li>
+                <li><a href="{% url 'contact' %}">Liên hệ</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- ASIDE -->
+            <!-- /ASIDE -->
+
+            <!-- STORE -->
+            <div id="store" class="col-md-12">
+                <!-- store fillter -->
+                <div class="store-filter clearfix">
+                    <div class="store-sort">
+                        <form id="formSearch">
+                            <label>
+                                <label>Demand: &nbsp {% render_field myfilter.form.demand class="input-select" %}
+                                    &nbsp</label>
+                                <label>Category: &nbsp {% render_field myfilter.form.category class="input-select" %}
+                                    &nbsp</label>
+                                <label>Brand: &nbsp {% render_field myfilter.form.brand class="input-select" %}</label>
+                            </label>
+                            Price:
+                            <select class="input-select" id="id_price">
+                                <option value="0">-----------</option>
+                                <option value="1">Dưới 10 triệu</option>
+                                <option value="2">10 triệu - 20 triệu</option>
+                                <option value="3">20 triệu - 30 triệu</option>
+                                <option value="4">Trên 30 triệu</option>
+
+                            </select>
+                        </form>
+
+                    </div>
+
+                </div>
+                <!-- /store fillter -->
+                <!-- store products -->
+                <div class="row" id="id_row">
+                    <!-- product -->
+                    {% for product in products %}
+                    <div class="col-md-3 col-xs-4">
+                        <div class="product">
+                            <a href="{% url 'product' product.id %}">
+                                <div class="product-img">
+
+                                    <img src="{{product.ImageURL}}" alt="" style="width: 100%">
+                                </div>
+                            </a>
+                            <div class="product-body">
+                                <p class="product-category">{{product.demand}}</p>
+                                <h3 class="product-name"><a href="{% url 'product' product.id %}">{{product.name}}</a>
+                                </h3>
+                                <h4 class="product-price">{{product.price|intcomma}},000 Vnd</h4>
+                                <!--									<div class="product-rating">-->
+
+                                <!--									</div>-->
+                                <!--									<div class="product-btns">-->
+                                <!--										<a class="quick-view"><i class="fa fa-eye"></i></a>-->
+                                <!--									</div>-->
+                                <div class="quick-information">
+                                    <p>name</p>
+                                    <p>config</p>
+                                    <p>ram</p>
+                                    <p>disk</p>
+                                </div>
+                            </div>
+                            <div class="add-to-cart">
+                                <button data-product={{product.id}} data-action="add"
+                                        class="add-to-cart-btn update-cart"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- /store products -->
+
+                <!-- store bottom filter -->
+
+                <div class="store-filter clearfix">
+
+                    <ul class="store-pagination">
+                        {% if products.has_previous %}
+                        <li><a href="?page={{ products.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+                        </li>
+                        {% if products.number|add:'-1' > 1 %}
+                        <li><a href="?page={{ products.number|add:'-1' }}">&hellip;</a></li>
+                        {% endif %}
+                        {% endif%}
+
+
+                        {% for i in numPage %}
+                        {% if products.number == i %}
+                        <li class="active"><a href="?page={{i}}">{{i}}</a></li>
+                        {% elif i > products.number|add:'-2' and i < products.number|add:'2' %}
+                        <li><a href="?page={{i}}">{{i}}</a></li>
+                        {% endif %}
+
+                        {% endfor%}
+
+
+                        {% if products.has_next %}
+
+                        {% if products.number|add:'1' > 1 %}
+                        <li><a href="?page={{ products.number|add:'-1' }}">&hellip;</a></li>
+                        {% endif %}
+                        <li><a href="?page={{ products.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
+                        {% endif%}
+                    </ul>
+                </div>
+                <!-- /store bottom filter -->
+            </div>
+            <!-- /STORE -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+
+
+{% endblock content %}

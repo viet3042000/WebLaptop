@@ -1,0 +1,270 @@
+{% extends 'Shop/main.html' %}
+{% load static %}
+{% block head %}
+<style>
+		.container-contact100 {
+		    width: 100%;
+		    min-height: 100vh;
+		    display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -moz-box;
+		    display: -ms-flexbox;
+		    display: flex;
+		    flex-wrap: wrap;
+		    justify-content: center;
+		    align-items: center;
+		    padding: 15px;
+		    font-family: Poppins-Bold;
+<!--		    background: #a64bf4;-->
+<!--		    background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);-->
+<!--		    background: -o-linear-gradient(45deg, #00dbde, #fc00ff);-->
+<!--		    background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);-->
+<!--		    background: linear-gradient(45deg, #00dbde, #fc00ff);-->
+		}
+		.wrap-contact100 {
+		    width: 45%;
+		    background: #fff;
+		    border-radius: 10px;
+		    overflow: hidden;
+		    padding: 42px 55px 45px 55px;
+			border: 2px black solid;
+		}
+<!--		form-->
+		.contact100-form {
+		    width: 100%;
+		}
+		.contact100-form-title {
+		    display: block;
+		    font-family: Poppins-Bold;
+		    font-size: 32px;
+		    color: #333333;
+		    line-height: 1.2;
+		    text-align: center;
+		    padding-bottom: 35px;
+		}
+		.wrap-input100 {
+		    width: 100%;
+		    position: relative;
+		    border-bottom: 2px solid #d9d9d9;
+		    padding-bottom: 10px;
+		    margin-bottom: 18px;
+		}
+		.wrap-input100 input{
+			  width: 100%;
+			  outline: none;
+			  border: none;
+			  display: block;
+			  background: transparent;
+<!--			  font-family: Poppins-Medium;-->
+			  font-size: 18px;
+			  color: #333333;
+			  line-height: 1.2;
+			  padding: 0 5px;
+		}
+<!--		button-->
+		.container-contact100-form-btn {
+		  display: -webkit-box;
+		  display: -webkit-flex;
+		  display: -moz-box;
+		  display: -ms-flexbox;
+		  display: flex;
+		  flex-wrap: wrap;
+		  justify-content: center;
+		  padding-top: 13px;
+		  font-family: Poppins-Bold
+		}
+		.wrap-contact100-form-btn {
+		  width: 100%;
+		  display: block;
+		  position: relative;
+		  z-index: 1;
+		  border-radius: 25px;
+		  overflow: hidden;
+		  margin: 0 auto;
+		}
+		.contact100-form-bgbtn {
+		  position: absolute;
+		  z-index: -1;
+		  width: 300%;
+		  height: 100%;
+		  background: #a64bf4;
+		  background: -webkit-linear-gradient(left, #de0000, #450406, #de0000, #450406);
+		  background: -o-linear-gradient(left, #de0000, #450406, #de0000, #450406);
+		  background: -moz-linear-gradient(left, #de0000, #450406, #de0000, #450406);
+		  background: linear-gradient(left, #de0000, #450406, #de0000, #450406);
+		  top: 0;
+		  left: -100%;
+
+		  -webkit-transition: all 0.4s;
+		  -o-transition: all 0.4s;
+		  -moz-transition: all 0.4s;
+		  transition: all 0.4s;
+		}
+		.contact100-form-btn {
+		  outline: none !important;
+		  border: none;
+	      background: transparent;
+		  display: -webkit-box;
+		  display: -webkit-flex;
+		  display: -moz-box;
+		  display: -ms-flexbox;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  padding: 0 20px;
+		  width: 100%;
+		  height: 50px;
+
+		  font-family: Poppins-Medium;
+		  font-size: 16px;
+		  color: #fff;
+		  line-height: 1.2;
+		}
+		.wrap-contact100-form-btn:hover .contact100-form-bgbtn {
+		  left: 0;
+		}
+		.contact100-form-btn i {
+		  -webkit-transition: all 0.4s;
+		  -o-transition: all 0.4s;
+		  -moz-transition: all 0.4s;
+		  transition: all 0.4s;
+		}
+		.contact100-form-btn:hover i {
+		  -webkit-transform: translateX(10px);
+		  -moz-transform: translateX(10px);
+		  -ms-transform: translateX(10px);
+		  -o-transform: translateX(10px);
+		  transform: translateX(10px);
+		}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<nav id="navigation">
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li><a href="{% url 'home' %}">Trang chủ</a></li>
+                <li><a href="{% url 'store' %}">Cửa hàng</a></li>
+                <li><a href="{% url 'aboutUs' %}">Chúng tôi</a></li>
+                <li><a href="{% url 'contact' %}">Liên hệ</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+</nav>
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form" method="post">
+            {% csrf_token %}
+            <span class="form-group" style="font-size:250%; font-weight:bold; margin-left:135px;">
+					Đổi mật khẩu
+				</span>
+
+            {% if messages %}
+            <!--					{% for message in messages %}-->
+            <div class="alert alert-{{message.tags}}" role="alert">
+                {{ message }}
+            </div>
+            <!--					{% endfor %}-->
+            {% endif %}
+
+            <!--				{% for field in f %}-->
+            <!--					<div class="wrap-input100 validate-input">-->
+            <!--						{{ field.label_tag }}<br>-->
+            <!--						{{ field }}-->
+            <!--					</div>-->
+            <!--					{% if field.help_text %}-->
+            <!--							<p style="color: black">{{ field.help_text }}</p>-->
+            <!--					{% endif %}-->
+            <!--					{% for error in field.errors %}-->
+            <!--							<p style="color: red">{{ error }}</p>-->
+            <!--					{% endfor %}-->
+            <!--				{% endfor %}-->
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100" style="font-size: 120%; font-weight: bold;">Mật khẩu cũ  </span>
+                {{f.old_password}}
+                <span class="focus-input100"></span>
+            </div>
+            {% for error in f.old_password.errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100" style="font-size: 120%; font-weight: bold;">Mật khẩu mới </span>
+                {{f.new_password1}}
+                <span class="focus-input100"></span>
+            </div>
+            <span class="label-input100">Mật khẩu của bạn không được quá giống với thông tin cá nhân khác của bạn.</span><br>
+            <span class="label-input100">Mật khẩu của bạn phải chứa ít nhất 8 ký tự.</span><br>
+            <span class="label-input100">Mật khẩu của bạn không được là mật khẩu thường dùng.</span><br>
+            <span class="label-input100">Mật khẩu của bạn không được hoàn toàn bằng số.</span><br>
+
+            <div class="wrap-input100 validate-input">
+                <span class="label-input100" style="font-size: 120%; font-weight: bold;">Xác nhận mật khẩu mới </span>
+                {{f.new_password2}}
+                <span class="focus-input100"></span>
+            </div>
+            <!--				{{f.password2.help_text}}-->
+            <span class="label-input100">Nhập mật khẩu giống như trước đây, để xác minh.</span><br>
+            {% for error in f.new_password2.errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+
+            <div class="container-contact100-form-btn" style="margin-top:15px;">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button class="contact100-form-btn">
+							<span>
+								Xác nhận
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--===============================================================================================-->
+<script src="{% static 'Signup/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'Signup/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'Signup/vendor/bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'Signup/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'Signup/vendor/select2/select2.min.js' %}"></script>
+<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+
+</script>
+<!--===============================================================================================-->
+<script src="{% static 'Signup/vendor/daterangepicker/moment.min.js' %}"></script>
+<script src="{% static 'Signup/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'Signup/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'Signup/js/main.js' %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+
+</script>
+{% endblock %}
+
+

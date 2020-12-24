@@ -1,0 +1,138 @@
+{% extends 'Shop/main.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li><a href="{% url 'home' %}">Trang chủ</a></li>
+                <li><a href="{% url 'store' %}">Cửa hàng</a></li>
+                <li class="active"><a href="{% url 'aboutUs' %}">Chúng tôi</a></li>
+                <li><a href="{% url 'contact' %}">Liên hệ</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
+<br>
+<br>
+<div style="margin-left: 20%; margin-right: 20%">
+    <br>
+    <h1 style="margin-left: 20%">CHÍNH SÁCH BẢO MẬT</h1>
+    <br>
+    <br>
+
+    <ol>
+        <li><strong>GIỚI THIỆU</strong></li>
+    </ol>
+    <br>
+    <p>"Dữ Liệu Cá Nhân" hay "dữ liệu cá nhân" có nghĩa là dữ liệu, dù đúng hay không, về một cá nhân mà thông qua đó có
+        thể được xác định được danh tính, hoặc từ dữ liệu đó và thông tin khác mà một tổ chức có hoặc có khả năng tiếp
+        cận. Các ví dụ thường gặp về dữ liệu cá nhân có thể gồm có tên, số chứng minh nhân dân và thông tin liên hệ.</p>
+
+    <p>Bằng việc sử dụng Các Dịch Vụ, đăng ký một tài khoản với chúng tôi hoặc truy cập Nền tảng, bạn xác nhận và đồng ý
+        rằng bạn chấp nhận các phương pháp, yêu cầu, và/hoặc chính sách được mô tả trong Chính sách bảo mật này, và theo
+        đây bạn đồng ý cho phép chúng tôi thu thập, sử dụng, tiết lộ và/hoặc xử lý dữ liệu cá nhân của bạn như mô tả
+        trong đây. NẾU BẠN KHÔNG ĐỒNG Ý CHO PHÉP XỬ LÝ DỮ LIỆU CÁ NHÂN CỦA BẠN NHƯ MÔ TẢ TRONG CHÍNH SÁCH NÀY, VUI LÒNG
+        KHÔNG SỬ DỤNG CÁC DỊCH VỤ CỦA CHÚNG TÔI HAY TRUY CẬP NỀN TẢNG HOẶC TRANG WEB CỦA CHÚNG TÔI. Nếu chúng tôi thay
+        đổi Chính sách bảo mật của mình, chúng tôi sẽ đăng những thay đổi đó hoặc Chính sách bảo mật sửa đổi trên Nền
+        tảng của chúng tôi. Chúng tôi có quyền sửa đổi bổ sung Chính sách bảo mật này vào bất kỳ lúc nào.</p>
+
+    <p>&nbsp;</p>
+
+    <ol start="2">
+        <li><strong>KHI NÀO LAPSHOP SẼ THU THẬP DỮ LIỆU CÁ NHÂN?</strong></li>
+    </ol>
+    <br>
+    <p> Chúng tôi sẽ/có thể thu thập dữ liệu cá nhân về bạn: </p>
+
+    <p>- Khi bạn đăng ký và/hoặc sử dụng Các Dịch Vụ hoặc Nền tảng của chúng tôi, hoặc mở một tài khoản với chúng
+        tôi.</p>
+
+    <p>- Khi bạn gửi bất kỳ biểu mẫu nào, bao gồm, nhưng không giới hạn ở, đơn đăng ký hoặc các mẫu đơn khác liên quan
+        đến bất kỳ sản phẩm và dịch vụ nào của chúng tôi, bằng hình thức trực tuyến hay dưới hình thức khác.</p>
+
+    <p>- Khi bạn ký kết bất kỳ thỏa thuận nào hoặc cung cấp các tài liệu hoặc thông tin khác liên quan đến tương tác
+        giữa bạn với chúng tôi, hoặc khi bạn sử dụng các sản phẩm và dịch vụ của chúng tôi.</p>
+
+    <p>- Khi bạn tương tác với chúng tôi, chẳng hạn như thông qua các cuộc gọi điện thoại (có thể được ghi âm lại), thư
+        từ, fax, gặp gỡ trực tiếp, các nền ứng dụng truyền thông xã hội và email.</p>
+
+    <p>- Khi bạn sử dụng các dịch vụ điện tử của chúng tôi, hoặc tương tác với chúng tôi qua Nền tảng hoặc Trang Web
+        hoặc Các Dịch Vụ của chúng tôi. Trường hợp này bao gồm, nhưng không giới hạn, thông qua tập tin cookie mà chúng
+        tôi có thể triển khai khi bạn tương tác với các Nền tảng hoặc Trang Web của chúng tôi.</p>
+
+    <p>- Khi bạn thực hiện các giao dịch thông qua Dịch vụ của chúng tôi.</p>
+
+    <p>- Khi bạn cung cấp ý kiến phản hồi hoặc gửi khiếu nại cho chúng tôi.</p>
+
+    <p>- Khi bạn gửi dữ liệu cá nhân của bạn cho chúng tôi vì bất kỳ lý do gì.</p>
+
+    <p>&nbsp;</p>
+
+    <ol start="3">
+        <li><strong>LAPSHOP SẼ THU THẬP NHỮNG DỮ LIỆU GÌ?</strong></li>
+    </ol>
+    <br>
+
+    <p>- Họ tên.</p>
+
+    <p>- Địa chỉ email.</p>
+
+    <p>- Ngày sinh.</p>
+
+    <p>- Địa chỉ thanh toán.</p>
+
+    <p>- Tài khoản ngân hàng và thông tin thanh toán.</p>
+
+    <p>- Số điện thoại.</p>
+
+    <p>- Giới tính.</p>
+
+    <p>- Thông tin được gửi bởi hoặc liên quan đến (các) thiết bị được sử dụng để truy cập vào Các Dịch vụ hoặc Nền tảng
+        của chúng tôi.</p>
+
+    <p>- Dữ liệu tổng hợp về nội dung người dùng sử dụng.</p>
+
+    <p>&nbsp;</p>
+
+    <ol start="4">
+        <li><strong>THU THẬP CÁC DỮ LIỆU KHÁC</strong></li>
+    </ol>
+    <br>
+
+    <p>Như với hầu hết các trang web và các ứng dụng di động khác, thiết bị của bạn gửi thông tin có thể gồm có dữ liệu
+        về bạn, được một máy chủ web ghi lại khi bạn sử dụng Nền tảng của chúng tôi. Thông tin này thường bao gồm nhưng
+        không giới hạn địa chỉ IP, hệ điều hành của máy tính/thiết bị di động, loại trình duyệt, loại thiết bị di động,
+        các đặc điểm của thiết bị di động, mã định danh thiết bị thống nhất (UDID) hoặc mã định danh thiết bị di động
+        (MEID) của thiết bị di động của bạn, địa chỉ tham chiếu của Trang Web (nếu có), các trang mà bạn đã truy cập đến
+        trên trang web hoặc ứng dụng di động của chúng tôi và thời gian truy cập và đôi khi là "cookie" (có thể vô hiệu
+        hóa bằng cách sử dụng tùy chọn trình duyệt của bạn) để giúp trang web ghi nhớ lần truy cập cuối cùng của bạn.
+        Nếu bạn đăng nhập, thông tin này được liên kết với tài khoản cá nhân của bạn. Thông tin này cũng được đưa vào
+        các số liệu thống kê ẩn danh để giúp chúng tôi hiểu được khách truy cập sử dụng Trang Web của chúng tôi như thế
+        nào.</p>
+
+    <p>Các ứng dụng di động của chúng tôi có thể thu thập thông tin chính xác về địa chỉ của thiết bị di động của bạn sử
+        dụng các công nghệ như GPS, Wi-Fi,…. Chúng tôi thu thập, sử dụng, công bố và/hoặc xử lý các thông tin này cho
+        một hoặc nhiều mục đích bao gồm, nhưng không giới hạn, các dịch vụ được cung cấp dựa trên vị trí mà bạn yêu cầu
+        hoặc chuyển các nội dung có liên quan đến bạn dựa trên vị trí của bạn hoặc cho phép bạn chia sẻ vị trí của bạn
+        cho các Người sử dụng khác như là một phần của các Dịch vụ được cung cấp bởi các ứng dụng di động của chúng tôi.
+        Đối với phần lớn các thiết bị di động, bạn có thể rút lại sự cho phép để chúng tôi được thu thập các thông tin
+        này dựa trên vị trí của bạn thông qua các cài đặt trên thiết bị. Nếu bạn có câu hỏi nào về cách thức vô hiệu hóa
+        các dịch vụ vị trí trên thiết bị di động của bạn, vui lòng liên hệ với các nhà cung cấp dịch vụ thiết bị di động
+        hoặc nhà sản xuất thiết bị của bạn. </p>
+
+    <p>&nbsp;</p>
+
+    <br>
+    <br>
+</div>
+
+{% endblock content %}

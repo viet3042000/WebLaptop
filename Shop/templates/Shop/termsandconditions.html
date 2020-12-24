@@ -1,0 +1,93 @@
+{% extends 'Shop/main.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li><a href="{% url 'home' %}">Trang chủ</a></li>
+                <li><a href="{% url 'store' %}">Cửa hàng</a></li>
+                <li class="active"><a href="{% url 'aboutUs' %}">Chúng tôi</a></li>
+                <li><a href="{% url 'contact' %}">Liên hệ</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
+<br>
+<br>
+<div style="margin-left: 20%; margin-right: 20%">
+    <br>
+    <h1 style="margin-left: 20%">ĐIỀU KHOẢN VÀ ĐIỀU KIỆN</h1>
+    <br>
+    <br>
+    <br>
+    <p>1. LapShop sẽ cung cấp dịch vụ đấu thầu từ khóa và/hoặc các dịch vụ hiển thị khác (sau đây được gọi là “Dịch Vụ
+        Hiển Thị”) trên Trang Web theo từng giai đoạn. Người Bán có thể chọn mua Dịch Vụ Hiển Thị. LapShop cung cấp Dịch
+        Vụ Hiển Thị theo các điều khoản dịch vụ này (sau đây được gọi là “Điều Khoản Sử Dụng Dịch Vụ Hiển Thị”) được
+        đăng tải trên Trang Web hoặc thông báo cho Người Bán. Người Bán chọn mua Dịch Vụ Hiển Thị đồng ý tuân thủ và
+        chịu sự điều chỉnh của Điều Khoản Sử Dụng Dịch Vụ Hiển Thị. Nếu bạn không đồng ý chịu sự điều chỉnh của Điều
+        Khoản Sử Dụng Dịch Vụ Hiển Thị, vui lòng không chọn mua bất kỳ Dịch Vụ Hiển Thị nào.</p>
+
+    <p>&nbsp;</p>
+
+    <p> 2. Để mua Dịch Vụ Hiển Thị, bạn phải là Người Bán đủ điều kiện theo quy định của Điều Khoản Sử Dụng Dịch Vụ Hiển
+        Thị. Vào thời điểm bạn mua và thanh toán cho Dịch Vụ Hiển Thị, Tài Khoản của bạn không được đang ở tình trạng bị
+        đình chỉ hoặc tạm ngưng hoạt động.</p>
+
+    <p>&nbsp;</p>
+
+    <p>3. Nếu bạn chọn mua Dịch Vụ Hiển Thị, bạn đồng ý thanh toán các khoản phí Dịch Vụ Hiển Thị theo quy định của
+        LapShop. Trừ khi được quy định khác đi ở Điều Khoản Sử Dụng Dịch Vụ Hiển Thị có liên quan, bạn không được hủy
+        đặt hàng và/hoặc yêu cầu hoàn phí sau khi đã chọn mua Dịch Vụ Hiển Thị và hoàn tất quy trình thanh toán phí Dịch
+        Vụ Hiển Thị. Trừ khi được quy định khác đi trong Điều Khoản Sử Dụng Dịch Vụ Hiển Thị, phí Dịch Vụ Hiển Thị được
+        mua ở Trang Web đã bao gồm thuế GTGT. Người Bán có thể yêu cầu hóa đơn thuế đối với Dịch Vụ Hiển Thị cho từng
+        tháng sau ngày 10 của tháng tiếp theo.</p>
+
+    <p>&nbsp;</p>
+
+    <p>4. Bạn có thể chọn mua Dịch Vụ Hiển Thị dựa trên từ khóa vào thời điểm đăng bán sản phẩm hoặc sau đó. Khi bạn đã
+        mua Dịch Vụ Hiển Thị dựa trên từ khóa và hoàn tất quy trình thanh toán phí Dịch Vụ Hiển Thị, bạn có thể thiết
+        lập các mức ngân sách, từ khóa, thời gian hiển thị… khác nhau đối với từng sản phẩm theo Điều Khoản Sử Dụng Dịch
+        Vụ Hiển Thị. Dịch Vụ Hiển Thị dựa trên từ khóa đối với mỗi sản phẩm sẽ được kích hoạt và hết hạn và các ngày do
+        bạn thiết lập từ trước (“Thời Hạn Dịch Vụ Hiển Thị Dựa Trên Từ Khóa”). Bạn sẽ không được chuyển Thời Hạn Dịch Vụ
+        Hiển Thị Dựa Trên Từ Khóa còn lại cho các sản phẩm khác nếu một sản phẩm đã được bán hoặc gỡ bỏ trong Thời Hạn
+        Dịch Vụ Hiển Thị Dựa Trên Từ Khóa đã thiết lập cho sản phẩm đó. Các khoản phí đã thanh toán sẽ không được hoàn
+        lại.</p>
+
+    <p>&nbsp;</p>
+
+    <p>5. Các hàng hóa được đăng bán ở Trang Web phải tuân thủ các quy định pháp luật có liên quan, Điều Khoản Sử Dụng
+        Dịch Vụ Hiển Thị, Điều Khoản Dịch Vụ, và Chính Sách Cấm/Hạn Chế Sản Phẩm. Bạn hiểu và đồng ý rằng LapShop có
+        quyền hủy bỏ ngay lập tức bất kỳ đăng bán nào vi phạm bất kỳ quy định nào trong các Điều Khoản Sử Dụng Dịch Vụ
+        Hiển Thị, Điều Khoản Dịch Vụ và Chính Sách Cấm/Hạn Chế Sản Phẩm và bất kỳ khoản phí Dịch Vụ Hiển Thị nào đã
+        thanh toán liên quan đến bất kỳ đăng bán bị hủy bỏ theo Mục 16.5 này sẽ không được hoàn lại. LapShop cũng sẽ
+        không có nghĩa vụ bồi thường bất kỳ thiệt hại nào liên quan đến các đăng bán bị hủy bỏ theo Mục 16.5 này.</p>
+
+    <p>&nbsp;</p>
+
+    <p>6. Bạn hiểu và đồng ý rằng LapShop không bảo đảm hoặc cam kết về việc tăng số lượng người truy cập hoặc doanh số
+        của sản phẩm có Dịch Vụ Hiển Thị.</p>
+
+    <p>&nbsp;</p>
+
+    <p>7. Chúng tôi khuyến cáo Người Bán chỉ mua Dịch Vụ Hiển Thị sau khi đã cân nhắc thấu đáo ngân sách cũng như các
+        mục tiêu sử dụng Dịch Vụ Hiển Thị. Trừ khi được quy định khác đi trong Điều Khoản Sử Dụng hoặc Điều Khoản Sử
+        Dụng Dịch Vụ Hiển Thị, LapShop sẽ không chịu trách nhiệm bồi thường hoặc bất kỳ trách nhiệm nào (bao gồm nhưng
+        không giới hạn ở các chi phí thực tế hoặc tổn thất về doanh thu) đối với kết quả hoặc hiệu quả kỳ vọng của bất
+        kỳ Dịch Vụ Hiển Thị nào.</p>
+
+    <p>&nbsp;</p>
+    <br>
+    <br>
+
+</div>
+
+{% endblock content %}

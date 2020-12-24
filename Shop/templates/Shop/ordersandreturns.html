@@ -1,0 +1,114 @@
+{% extends 'Shop/main.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li><a href="{% url 'home' %}">Trang chủ</a></li>
+                <li><a href="{% url 'store' %}">Cửa hàng</a></li>
+                <li class="active"><a href="{% url 'aboutUs' %}">Chúng tôi</a></li>
+                <li><a href="{% url 'contact' %}">Liên hệ</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
+<br>
+<br>
+<div style="margin-left: 20%; margin-right: 20%">
+    <br>
+    <h1 style="margin-left: 20%">CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN</h1>
+    <br>
+    <br>
+
+    <ol>
+        <li><strong>Điều kiện áp dụng</strong></li>
+    </ol>
+    <br>
+    <p>Theo các điều khoản và điều kiện được quy định trong Chính sách Trả hàng và Hoàn tiền này và tạo thành một phần
+        của Điều khoản dịch vụ, Shopee đảm bảo quyền lợi của Người mua bằng cách cho phép gửi yêu cầu hoàn trả sản phẩm
+        và/hoặc hoàn tiền trước khi hết hạn. Thời hạn LapShop Đảm Bảo đã được qui định trong Điều khoản Dịch vụ.</p>
+
+    <p>LapShop Đảm bảo là một dịch vụ cung cấp bởi LapShop, theo yêu cầu của Người dùng, để hỗ trợ Người dùng trong việc
+        giải quyết các xung đột có thể phát sinh trong quá trình giao dịch. Người dùng có thể liên hệ với nhau để thỏa
+        thuận về việc giải quyết tranh chấp của họ hoặc báo cáo lên LapShop hoặc cơ quan nhà nước có thẩm quyền để được
+        hỗ trợ trong việc giải quyết bất kỳ tranh chấp xảy ra trước, trong hoặc sau khi sử dụng LapShop Đảm bảo.</p>
+
+    <p>&nbsp;</p>
+
+    <ol start="2">
+        <li><strong>Điều kiện trả hàng</strong></li>
+    </ol>
+    <br>
+    <p> Người mua đồng ý rằng cô ấy/anh ấy chỉ có thể yêu cầu trả hàng và hoàn tiền trong các trường hợp sau: </p>
+
+    <p>- Người mua đã thanh toán nhưng không nhận được sản phẩm;</p>
+
+    <p>- Sản phẩm bị lỗi hoặc bị hư hại trong quá trình vận chuyển;</p>
+
+    <p>- Người bán giao sai sản phẩm cho Người mua (VD: sai kích cỡ, sai màu sắc, v.vv...);</p>
+
+    <p>- Sản phẩm Người mua nhận được khác biệt một cách rõ rệt so với thông tin mà Người bán cung cấp trong mục mô tả
+        sản phẩm;</p>
+
+    <p>- Người bán đã tự thỏa thuận và đồng ý cho Người mua trả hàng (tuy nhiên LapShop sẽ cần Người bán xác nhận lại
+        những thoả thuận này).</p>
+
+    <p>&nbsp;</p>
+
+    <ol start="3">
+        <li><strong>Không thay đổi ý định mua hàng</strong></li>
+    </ol>
+    <br>
+    <p>Trừ khi được đề cập trong Chính sách Trả hàng và Hoàn tiền này, các trường hợp trả hàng do Người mua thay đổi ý
+        định mua hàng sẽ không được chấp nhận.</p>
+
+    <p>&nbsp;</p>
+
+    <ol start="4">
+        <li><strong>Quyền lợi của Người bán</strong></li>
+    </ol>
+    <br>
+    <p>Khi nhận được yêu cầu trả hàng và/hoặc hoàn tiền từ phía Người mua, LapShop sẽ thông báo cho Người bán qua văn
+        bản (thông báo trên Ứng dụng và/hoặc thư điện tử và/hoặc tin nhắn điện thoại). Người bán cần phải gửi phản hồi
+        theo hướng dẫn của LapShop trong thời gian quy định. Sau thời gian đó, nếu LapShop không nhận được bất cứ phản
+        hồi nào từ Người bán, LapShop hiểu rằng Người bán hoàn toàn đồng ý với yêu cầu của Người mua, và tự động hoàn
+        tiền cho Người mua sau khi nhận được bằng chứng về việc Người mua đã hoàn tất hoàn trả hàng cho Người bán.
+        LapShop luôn theo dõi phản hồi của Người bán trong từng trường hợp và toàn quyền ra quyết định cuối cùng đối với
+        yêu cầu trả hàng/hoàn tiền của Người mua.</p>
+
+    <p>&nbsp;</p>
+
+    <ol start="5">
+        <li><strong>Liên lạc giữa Người bán và Người mua</strong></li>
+    </ol>
+    <br>
+    <p>LapShop khuyến khích Người dùng liên hệ để thương lượng trước với nhau khi có bất cứ vấn đề nào phát sinh trong
+        giao dịch. LapShop sẽ chỉ can thiệp trong trường hợp Người bán và Người mua không thể đi đến thỏa thuận cuối
+        cùng; do vậy Người mua nên chủ động liên hệ với Người bán khi có bất cứ vấn đề nào liên quan đến đơn hàng.</p>
+
+    <p>&nbsp;</p>
+
+    <ol start="6">
+        <li><strong>Tranh chấp giữa Người mua và Người bán</strong></li>
+    </ol>
+    <br>
+    <p>Người mua và Người bán đồng ý bồi thường và giữ cho LapShop không bị thiệt hại, hoặc chống lại bất kỳ việc khiếu
+        nại, kiện tụng, hoặc các nghĩa vụ/trách nhiệm, thiệt hại, tuyên bố, hình phạt, tiền phạt, các chi phí và phí tổn
+        (bao gồm, nhưng không giới hạn bất kỳ chi phí giải quyết tranh chấp nào khác) có liên quan phát sinh từ hoặc có
+        liên quan đến bất kỳ hành động nào của LapShop theo Chính sách Trả hàng và Hoàn tiền này.</p>
+
+    <p>&nbsp;</p>
+    <br>
+    <br>
+</div>
+
+{% endblock content %}

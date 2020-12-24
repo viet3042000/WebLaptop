@@ -1,0 +1,233 @@
+{% extends 'Shop/main.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li class="active"><a href="{% url 'home' %}">Trang chủ</a></li>
+                <li><a href="{% url 'store' %}">Cửa hàng</a></li>
+                <li><a href="{% url 'aboutUs' %}">Chúng tôi</a></li>
+                <li><a href="{% url 'contact' %}">Liên hệ</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
+<div class="section">
+
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- shop -->
+
+            <div class="col-md-3 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="{% static './img/gaming.jpg' %}" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h4>Laptop<br>Học tập - Văn phòng</h4>
+                        <a href="{% url 'store' %}?demand=Học%20tập%20-%20Văn%20phòng" class="cta-btn">Shop now <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="{% static './img/gaming.jpg' %}" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h4 style="padding-bottom: 18px;">Laptop<br>Gaming</h4>
+                        <a href="{% url 'store' %}?demand=Gaming" class="cta-btn">Shop now <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="{% static './img/gaming.jpg' %}" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h4>Laptop<br>Đồ họa- Kĩ thuật</h4>
+                        <a href="{% url 'store' %}?demand=Đồ họa- Kĩ thuật" class="cta-btn">Shop now <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-6">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="{% static './img/gaming.jpg' %}" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h4>Laptop<br>Cao cấp-Sang trọng</h4>
+                        <a href="{% url 'store' %}?demand=Cao cấp-Sang trọng" class="cta-btn">Shop now <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /shop -->
+
+
+            <!-- /shop -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+
+
+<!-- ******************************* New Product *********************** -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">Sản phẩm mới </h3>
+                </div>
+            </div>
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-1">
+                                <!-- product -->
+                                {% for product in newProduct %}
+                                <div class="product">
+                                    <a href="{% url 'product' product.id %}">
+                                        <div class="product-img">
+                                            <img src="{{product.ImageURL}}" alt="">
+                                            <div class="product-label">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="product-body">
+                                        <p class="product-category">{{product.demand}}</p>
+                                        <h3 class="product-name"><a href="{% url 'product' product.id %}">{{product.name}}</a>
+                                        </h3>
+                                        <h4 class="product-price">{{product.price|intcomma}},000 Vnd</h4>
+                                        <!--												<div class="product-rating">-->
+
+                                        <!--												</div>-->
+                                        <!--												<div class="product-btns">-->
+                                        <!--													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>-->
+                                        <!--												</div>-->
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button data-product={{product.id}} data-action="add"
+                                                class="add-to-cart-btn update-cart"><i class="fa fa-shopping-cart"></i>
+                                            Thêm vào giỏ hàng
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+                                {% endfor %}
+
+
+                                <!-- /product -->
+                            </div>
+                            <div id="slick-nav-1" class="products-slick-nav"></div>
+                        </div>
+                        <!-- /tab -->
+                    </div>
+                </div>
+            </div>
+            <!-- Products tab & slick -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+
+
+<!-- ******************************* Top selling *********************** -->
+
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+
+            <!-- section title -->
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">Top selling</h3>
+                    <div class="section-nav">
+
+                    </div>
+                </div>
+            </div>
+            <!-- /section title -->
+
+            <!-- Products tab & slick -->
+            <div class="col-md-12" style="margin-bottom:35px">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab2" class="tab-pane fade in active">
+                            <div class="products-slick" data-nav="#slick-nav-2">
+                                <!-- product -->
+                                {% for product in topSelling %}
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="{{product.ImageURL}}" alt="">
+                                        <div class="product-label">
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">{{product.demand}}</p>
+                                        <h3 class="product-name"><a href="{% url 'product' product.id %}">{{product.name}}</a>
+                                        </h3>
+                                        <h4 class="product-price">{{product.price|intcomma}},000 Vnd</h4>
+                                        <!--												<div class="product-rating">-->
+                                        <!--													-->
+                                        <!--												</div>-->
+                                        <!--												<div class="product-btns">-->
+                                        <!--													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>-->
+                                        <!--												</div>-->
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button data-product={{product.id}} data-action="add"
+                                                class="add-to-cart-btn update-cart"><i class="fa fa-shopping-cart"></i>Thêm
+                                            vào giỏ hàng
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /product -->
+                                {% endfor %}
+
+                                <!-- /product -->
+                            </div>
+                            <div id="slick-nav-2" class="products-slick-nav"></div>
+                        </div>
+                        <!-- /tab -->
+                    </div>
+                </div>
+            </div>
+            <!-- /Products tab & slick -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+
+
+{% endblock content %}

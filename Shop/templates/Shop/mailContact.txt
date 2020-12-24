@@ -1,0 +1,10 @@
+{% autoescape off %}
+Chào bạn.
+
+Chúng tôi đã nhận được email của bạn.
+
+Từ ngày 20/12/2020 đến 1/1/2021, cửa hàng chúng tôi sẽ có những ưu đãi giảm giá sản phẩm từ 10-50% để tri ân khách hàng nhân dịp noel và tết dương lịch.
+
+Cảm ơn bạn đã quan tâm!
+
+{% endautoescape %}

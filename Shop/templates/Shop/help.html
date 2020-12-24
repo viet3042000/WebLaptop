@@ -1,0 +1,58 @@
+{% extends 'Shop/main.html' %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% block content %}
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li><a href="{% url 'home' %}">Trang chủ</a></li>
+                <li><a href="{% url 'store' %}">Cửa hàng</a></li>
+                <li class="active"><a href="{% url 'aboutUs' %}">Chúng tôi</a></li>
+                <li><a href="{% url 'contact' %}">Liên hệ</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
+<br>
+<br>
+<div style="margin-left: 20%; margin-right: 20%">
+    <br>
+    <h1 style="margin-left: 35%">GIÚP ĐỠ</h1>
+    <br>
+    <br>
+
+    <p>Chúng tôi muốn xây dựng cộng đồng LapShop thân thiện và tích cực! Tiêu chuẩn này được đưa ra để hướng dẫn người
+        bán và người mua gìn giữ một thị trường mua bán an toàn. Vui lòng đọc những việc nên và không nên làm dưới đây
+        khi sử dụng ứng dụng Shopee. Bằng việc dùng ứng dụng này, bạn đồng ý với các Điều khoản sử dụng của chúng tôi.
+        Chúng tôi cam kết nỗ lực gìn giữ sự an toàn cho cộng đồng mua bán này.</p>
+
+    <p></p>
+
+    <p>Người mua sẽ chú ý ngay nếu sản phẩm của bạn có ảnh hấp dẫn. Để có những bức ảnh thật đẹp, bạn có thể tham khảo
+        Mẹo bán hàng trên LapShop. Bên cạnh đó, hãy là người bán hàng chân thật, mô tả sản phẩm thật chính xác và chi
+        tiết vì khách hàng luôn muốn biết rõ về sản phẩm mà họ mua. Nhờ đó, bạn sẽ nhận được những đánh giá tích cực từ
+        họ!</p>
+
+    <p></p>
+
+    <p>Chúng tôi muốn xây dựng một cộng đồng an toàn và văn minh để mọi người cùng tận hưởng niềm vui mua sắm trên di
+        động. Vì vậy, hãy đăng tải những nội dung lành mạnh và phù hợp với tất cả mọi người; không sử dụng ngôn ngữ thô
+        tục, đăng các nội dung xấu hay làm phiền người khác. Trong cộng đồng LapShop, người dùng phải tôn trọng lẫn nhau
+        và cư xử có thiện chí giữa người mua và người bán, cũng như giữa người dùng và LapShop. Dù bạn mua hay bán hàng
+        trên LapShop, hãy tuân thủ những quy tắc dưới đây để đảm bảo mọi người cùng được mua sắm dễ dàng!</p>
+
+    <p></p>
+
+    <br>
+    <br>
+</div>
+
+{% endblock content %}
