@@ -19,4 +19,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('logout/', views.logout, name='logout'),
     path('login/', views.login_view, name='login'),
+    path('update_checkout/', views.update_checkout, name='update_checkout'),
 ]

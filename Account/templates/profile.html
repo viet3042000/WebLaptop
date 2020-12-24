@@ -1,7 +1,7 @@
 {% extends 'Shop/main.html' %}
 {% load static %}
 {% block head %}
-<style>
+    <style>
 <!--		button-->
         .container-contact100-form-btn {
           display: -webkit-box;
@@ -76,84 +76,10 @@
           -o-transform: translateX(10px);
           transform: translateX(10px);
         }
-
-</style>
+    </style>
 {% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
-<nav id="navigation">
-    <div class="container">
-        <!-- responsive-nav -->
-        <div id="responsive-nav">
-            <!-- NAV -->
-            <ul class="main-nav nav navbar-nav">
-                <li><a href="{% url 'home' %}">Trang chủ</a></li>
-                <li><a href="{% url 'store' %}">Cửa hàng</a></li>
-                <li><a href="{% url 'aboutUs' %}">Chúng tôi</a></li>
-                <li><a href="{% url 'contact' %}">Liên hệ</a></li>
-            </ul>
-            <!-- /NAV -->
-        </div>
-        <!-- /responsive-nav -->
-    </div>
-</nav>
-<div class="container" id="profile">
-    <h2>Hồ Sơ Của Tôi</h2><br>
-    <form class="clientProfile" action="#" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="username">Tên đăng nhập:</label>
-            <input type="text" class="form-control" value="{{user.username}}" readonly placeholder="Username"
-                   name="username" id="username">
-        </div>
-        <div class="form-group">
-            <label for="fullname">Tên đầy đủ:</label>
-            <input type="text" class="form-control" value="{{user.first_name}} {{user.last_name}}"
-                   placeholder="Fullname" name="fullname" id="fullname" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" value="{{user.email}}" placeholder="Email" name="email">
-        </div>
-        <div class="form-group">
-            <label for="address">Địa chỉ:</label>
-            {% if user.has_usable_password %}
-            {% if customer.address is not None %}
-            <input type="text" class="form-control" id="address" value="{{customer.address}}" placeholder="Address"
-                   name="address">
-            {% else %}
-            <input type="text" class="form-control" id="address" value="" placeholder="Address" name="address">
-            {% endif %}
-            {% else %}
-            {% if customer.address is not None %}
-            <input type="text" class="form-control" id="address" value="{{customer.address}}" placeholder="Address"
-                   name="address">
-            {% else %}
-            <input type="text" class="form-control" id="address" value="" placeholder="Address" name="address">
-            {% endif %}
-            {% endif %}
-        </div>
-        <div class="form-group">
-            <label for="phone">Số điện thoại:</label>
-            {% if user.has_usable_password %}
-            {% if customer.phone is not None %}
-            <input type="text" class="form-control" id="phone" value="{{customer.phone}}" placeholder="Phone"
-                   name="phone">
-            {% else %}
-            <input type="text" class="form-control" id="phone" value="" placeholder="Phone" name="phone">
-            {% endif %}
-            {% else %}
-            {% if customer.phone is not None %}
-            <input type="text" class="form-control" id="phone" value="{{customer.phone}}" placeholder="Phone"
-                   name="phone">
-            {% else %}
-            <input type="text" class="form-control" id="phone" value="" placeholder="Phone" name="phone">
-            {% endif %}
-            {% endif %}
-        </div>
-        <br>
-=======
 	<nav id="navigation">
 		<div class="container">
 			<!-- responsive-nav -->
@@ -180,7 +106,7 @@
                 </div>
                 <div class="form-group">
                     <label for="fullname">Tên đầy đủ:</label>
-                    <input type="text" class="form-control" value="{{user.first_name}} {{user.last_name}}" placeholder="Fullname" name="fullname" id="fullname" required>
+                    <input type="text" class="form-control" value="{{user.first_name}} {{user.last_name}}" placeholder="Fullname" name="fullname" id="fullname">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -218,78 +144,72 @@
                             {% endif %}
                         {% endif %}
                 </div><br>
->>>>>>> a41a0bf00fba50381dd73dd233f3bb753b848897
 
-        <div class="container-contact100-form-btn">
-            <div class="wrap-contact100-form-btn">
-                <div class="contact100-form-bgbtn"></div>
-                <button class="contact100-form-btn">
+                <div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
 							<span>
 								Xác nhận
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							</span>
-                </button>
-            </div>
-        </div>
-    </form>
-    <br>
+						</button>
+					</div>
+				</div>
+            </form><br>
 
-    {% if order %}
-    <div class="col-md-8" style="margin-top:15px">
-        <h3>Lịch sử đặt hàng </h3>
-        <hr>
-        <table class="table">
-            <thead>
-            <tr>
-                <th>STT</th>
-                <th>Tên</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>Ngày hoàn thành</th>
-                <th>Địa chỉ</th>
-                <th></th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for o in order %}
-            <tr>
-                <td>{{forloop.counter}}</td>
-                <td>{{o.name}}</td>
-                <td>{{o.email}}</td>
-                <td>{{o.status}}</td>
-                <td>{{o.date_finnish}}</td>
-                <td>{{o.address}}</td>
+            {% if order %}
+                <div class="col-md-8" style="margin-top:15px">
+                    <h3>Lịch sử đặt hàng </h3>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên </th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Ngày hoàn thành </th>
+                                <th>Địa chỉ </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%  for o in order %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{o.name}}</td>
+                                    <td>{{o.email}}</td>
+                                    <td>{{o.status}}</td>
+                                    <td>{{o.date_finnish}}</td>
+                                    <td>{{o.address}}</td>
 
-                <td>
-                    <div class="container-contact100-form-btn">
-                        <div class="wrap-contact100-form-btn">
-                            <div class="contact100-form-bgbtn"></div>
-                            <button class="contact100-form-btn" style="height: 40px">
+                                    <td>
 
-                                <a href="{% url 'orderdetail' o.id %}" role="button" style="color:white;">Chi tiết </a>
+                                        <a href="{% url 'orderdetail' o.id %}"> <button class="btn btn-success" >Xem</button></a>
+<!--                                        <div class="container-contact100-form-btn">-->
+<!--                                            <div class="wrap-contact100-form-btn">-->
+<!--                                                <div class="contact100-form-bgbtn"></div>-->
+<!--                                                <button class="contact100-form-btn" style="height: 40px">-->
 
-<<<<<<< HEAD
-                                <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    {% endif %}
-</div>
-{% endblock %}
-=======
-                                                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                                                </button>
-                                            </div>
-                                        </div>
+<!--                                                    <a href="{% url 'orderdetail' o.id %}" role="button" style="color:white;">Chi tiết </a>-->
+
+<!--                                                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>-->
+<!--                                                </button>-->
+<!--                                                <button class="btn btn-primary" >Xóa</button>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+                                    </td>
+                                    <td>
+                                        {% if o.status == "Cancel"  %}
+                                        <button data-id="{{o.id}}" class="btn btn-primary delete" >Xóa</button>
+                                        {% elif o.status == "Completed" %}
+                                        <button data-id="{{o.id}}" class="btn btn-primary delete" >Xóa</button>
+                                        {% endif %}
                                     </td>
                                 </tr>
+                           <script src="{% static 'js/checkout.js' %}"></script>
                             {% endfor %}
                         </tbody>
                     </table>
@@ -297,4 +217,3 @@
             {% endif %}
         </div>
 {% endblock %}
->>>>>>> a41a0bf00fba50381dd73dd233f3bb753b848897

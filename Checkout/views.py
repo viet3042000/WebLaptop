@@ -72,6 +72,12 @@ def orderdetail(request, id):
         order.save()
 
     order_product = Order_Product.objects.filter(order=order)
+
+    if order.status == "Completed":
+        for order_product1 in order_product:
+            order_product1.product.quantity = order_product1.product.quantity - order_product1.quantity
+            order_product1.product.quantitySelled = order_product1.product.quantitySelled + order_product1.quantity
+            order_product1.product.save()
     context = {
         'cart': cart,
         'cart_product': cart_product,

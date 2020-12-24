@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.views import View
@@ -7,7 +8,7 @@ from .models import Customer
 from Boss.models import Admin
 
 from Shop.views import Same
-
+import json
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -183,3 +184,9 @@ class SetNewPasswordView(View):
             else:
                 messages.warning(request, 'Please correct the error below.')
         return redirect('login')
+def update_checkout(request):
+    data = json.loads(request.body)
+    Id = data['Id']
+    order = Order.objects.get(pk = Id)
+    order.delete()
+    return JsonResponse("order is updated", safe=False)

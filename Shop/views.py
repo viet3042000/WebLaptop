@@ -41,6 +41,8 @@ def updateItem(request):
     cart_product, created = Cart_Product.objects.get_or_create(cart=cart, product=product)
     if action == 'add' and product.quantity >= int(quantity):
         cart_product.quantity = (cart_product.quantity + int(quantity))
+        if cart_product.quantity > product.quantity:
+            cart_product.quantity = product.quantity
         cart_product.save()
 
     elif action == 'remove':
