@@ -6,7 +6,6 @@ from django.utils.safestring import mark_safe
 
 from Account.models import Customer
 
-
 class Brand(models.Model):
     brandName = models.CharField(max_length=200, null=True)
     description = models.TextField(null=True, blank=True)
