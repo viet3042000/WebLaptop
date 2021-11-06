@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
 
-    # https
+    # https for facebook
     "sslserver",
 
     'django.contrib.sites',
@@ -150,7 +150,7 @@ LOGIN_REDIRECT_URL = "/"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'viet3042000@gmail.com'
-EMAIL_HOST_PASSWORD = 'captain3042000@'
+EMAIL_HOST_PASSWORD = 'aloalo1234@'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

@@ -75,6 +75,7 @@ def Store(request):
         Allproducts = Product.objects.filter(name__icontains=search)
 
     if request.method == 'GET' and request.is_ajax():
+        print("request:", request)
         data = {}
         myfilter = productFilter(request.GET, queryset=Allproducts.values())
         Allproduct = list(myfilter.qs)
@@ -168,3 +169,4 @@ def termandconditions(request):
 def help(request):
     (cart, cart_product) = Same(request)
     return render(request, 'Shop/help.html', {'cart': cart, 'cart_product': cart_product})
+
